@@ -51,6 +51,11 @@ module Jekyll
       end
 
       response = client.execute(:api_method => analytics.data.ga.get, :parameters => params)
+
+      if response.error?
+        abort("Client Execute Error: #{response.error_message}")
+      end
+
       results = Hash[response.data.rows]
 
       site.posts.each { |post|
