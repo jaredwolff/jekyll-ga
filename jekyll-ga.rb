@@ -18,7 +18,9 @@ module Jekyll
       end
 
       ga = site.config['jekyll_ga']
-      client = Google::APIClient.new()
+      client = Google::APIClient.new(
+        :application_name => ga['application_name'],
+        :application_version => ga['application_version'])
 
       # Load our credentials for the service account
       key = Google::APIClient::KeyUtils.load_from_pkcs12(ga['key_file'], ga['key_secret'])
