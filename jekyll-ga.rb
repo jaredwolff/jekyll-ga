@@ -9,7 +9,6 @@ require 'chronic'
 module Jekyll
 
   class GoogleAnalytics < Generator
-    safe true
     priority :highest
 
     def generate(site)
