@@ -5,6 +5,7 @@ require 'jekyll/post'
 require 'rubygems'
 require 'google/api_client'
 require 'chronic'
+require 'json'
 
 module Jekyll
 
